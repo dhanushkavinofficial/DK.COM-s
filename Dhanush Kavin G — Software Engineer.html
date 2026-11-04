@@ -1,0 +1,2008 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>Dhanush Kavin G — Software Engineer</title>
+    <meta
+      name="description"
+      content="Portfolio of Dhanush Kavin G, a Java and Spring Boot software engineer with a passion for mathematics, DSA and intelligent systems."
+    />
+    <meta property="og:title" content="Dhanush Kavin G — Software Engineer" />
+    <meta
+      property="og:description"
+      content="Java, Spring Boot, REST APIs, DSA and computational mathematics."
+    />
+    <meta property="og:type" content="website" />
+    <meta name="theme-color" content="#fbfbfd" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Dhanush Kavin G",
+        "jobTitle": "Software Engineer",
+        "sameAs": [
+          "https://github.com/dhanushkavinofficial",
+          "https://www.linkedin.com/in/dhanushkaving1",
+          "https://medium.com/@dhanushkavinofficial",
+          "https://dev.to/dhanush_kaving_f68718582"
+        ]
+      }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+    <style>
+      :root {
+        --bg: #fbfbfd;
+        --fg: #1d1d1f;
+        --mut: #6e6e73;
+        --card: rgba(255, 255, 255, 0.72);
+        --line: rgba(0, 0, 0, 0.08);
+        --acc: #0071e3;
+        --acc2: #a855f7;
+        --glass: rgba(251, 251, 253, 0.72);
+        --code: #1c1c1e;
+        box-sizing: border-box;
+        padding-top: env(safe-area-inset-top, 0px);
+        padding-bottom: env(safe-area-inset-bottom, 0px);
+      }
+
+      :root[data-theme="dark"] {
+        color-scheme: dark;
+        --bg: #000;
+        --fg: #f5f5f7;
+        --mut: #a1a1a6;
+        --card: rgba(28, 28, 30, 0.72);
+        --line: rgba(255, 255, 255, 0.1);
+        --acc: #2997ff;
+        --acc2: #bf5af2;
+        --glass: rgba(22, 22, 23, 0.72);
+      }
+      html {
+        scroll-padding-top: 90px;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--fg);
+        font-family:
+          "Inter",
+          -apple-system,
+          BlinkMacSystemFont,
+          "Helvetica Neue",
+          Arial,
+          sans-serif;
+        -webkit-font-smoothing: antialiased;
+        overflow-x: hidden;
+        transition:
+          background 0.5s,
+          color 0.5s;
+      }
+      .mono {
+        font-family: "JetBrains Mono", ui-monospace, Menlo, monospace;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      .wrap {
+        max-width: 1120px;
+        margin: 0 auto;
+        padding: 0 22px;
+      }
+      section {
+        padding: clamp(80px, 12vw, 150px) 0;
+        position: relative;
+      }
+      .eyebrow {
+        font-size: 0.8rem;
+        font-weight: 600;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--acc);
+      }
+      h2.t {
+        font-size: clamp(2rem, 5.5vw, 3.8rem);
+        font-weight: 700;
+        letter-spacing: -0.035em;
+        line-height: 1.05;
+        margin: 0.4em 0 0.3em;
+      }
+      .sub {
+        color: var(--mut);
+        font-size: clamp(1rem, 1.6vw, 1.25rem);
+        max-width: 640px;
+        line-height: 1.55;
+      }
+      .grad {
+        background: linear-gradient(
+          100deg,
+          var(--acc),
+          var(--acc2) 60%,
+          #ff6b9a
+        );
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+      .card {
+        background: var(--card);
+        backdrop-filter: saturate(180%) blur(24px);
+        -webkit-backdrop-filter: saturate(180%) blur(24px);
+        border: 1px solid var(--line);
+        border-radius: 24px;
+        padding: 26px;
+        transition: box-shadow 0.5s;
+        will-change: transform;
+      }
+      .card:hover {
+        box-shadow: 0 30px 60px -25px rgba(0, 0, 0, 0.35);
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 13px 24px;
+        border-radius: 999px;
+        font-weight: 600;
+        font-size: 0.95rem;
+        transition:
+          transform 0.3s,
+          opacity 0.3s;
+      }
+      .btn:hover {
+        transform: scale(1.04);
+      }
+      .btn.p {
+        background: var(--acc);
+        color: #fff;
+      }
+      .btn.s {
+        border: 1px solid var(--line);
+        background: var(--card);
+      }
+      .tag {
+        display: inline-block;
+        font-size: 0.72rem;
+        font-weight: 500;
+        padding: 4px 10px;
+        border-radius: 99px;
+        background: var(--line);
+        color: var(--mut);
+        margin: 3px 4px 0 0;
+      }
+      /* nav */
+      #nav {
+        position: fixed;
+        top: calc(12px + env(safe-area-inset-top, 0px));
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 50;
+        max-width: calc(100% - 20px);
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        padding: 6px;
+        border-radius: 999px;
+        background: var(--glass);
+        backdrop-filter: saturate(180%) blur(30px);
+        -webkit-backdrop-filter: saturate(180%) blur(30px);
+        border: 1px solid var(--line);
+        box-shadow: 0 8px 30px -12px rgba(0, 0, 0, 0.25);
+      }
+      #links {
+        display: flex;
+        gap: 2px;
+        overflow-x: auto;
+        scrollbar-width: none;
+      }
+      #links::-webkit-scrollbar {
+        display: none;
+      }
+      #links a {
+        white-space: nowrap;
+        font-size: 0.82rem;
+        font-weight: 500;
+        padding: 8px 13px;
+        border-radius: 99px;
+        color: var(--mut);
+        transition: 0.3s;
+      }
+      #links a:hover {
+        color: var(--fg);
+      }
+      #links a.on {
+        background: var(--fg);
+        color: var(--bg);
+      }
+      .logo {
+        font-weight: 800;
+        padding: 6px 12px;
+        letter-spacing: -0.04em;
+      }
+      #theme {
+        border: 0;
+        background: var(--line);
+        color: var(--fg);
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+        cursor: pointer;
+        flex: none;
+        font-size: 15px;
+      }
+      #bar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 3px;
+        width: 100%;
+        transform-origin: left;
+        transform: scaleX(0);
+        background: linear-gradient(90deg, var(--acc), var(--acc2));
+        z-index: 60;
+      }
+      /* hero */
+      #home {
+        min-height: 100svh;
+        display: flex;
+        align-items: center;
+        padding-top: 120px;
+        overflow: hidden;
+      }
+      .orb {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(90px);
+        opacity: 0.35;
+        pointer-events: none;
+      }
+      h1 {
+        font-size: clamp(2.8rem, 9vw, 7rem);
+        font-weight: 800;
+        letter-spacing: -0.05em;
+        line-height: 0.98;
+        margin: 0.25em 0;
+      }
+      .stat b {
+        font-size: 2.2rem;
+        font-weight: 700;
+        letter-spacing: -0.03em;
+        display: block;
+      }
+      .stat span {
+        color: var(--mut);
+        font-size: 0.85rem;
+      }
+      /* macbook */
+      .mac {
+        perspective: 1600px;
+        margin-top: 70px;
+      }
+      .lid {
+        max-width: 760px;
+        margin: 0 auto;
+        transform-origin: 50% 100%;
+        transform: rotateX(18deg);
+        background: #0b0b0c;
+        border: 2px solid #3a3a3c;
+        border-radius: 20px 20px 6px 6px;
+        padding: 12px 12px 14px;
+        box-shadow: 0 60px 100px -40px rgba(0, 0, 0, 0.6);
+      }
+      .notch {
+        width: 90px;
+        height: 14px;
+        background: #000;
+        border-radius: 0 0 10px 10px;
+        margin: -12px auto 6px;
+      }
+      .screen {
+        background: linear-gradient(135deg, #0a1a3a, #2a0a4a);
+        border-radius: 8px;
+        aspect-ratio: 16/10;
+        padding: 14px;
+        position: relative;
+        overflow: hidden;
+        color: #e5e5ea;
+      }
+      .win {
+        background: var(--code);
+        border-radius: 10px;
+        height: 100%;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      .dots {
+        display: flex;
+        gap: 6px;
+        padding: 10px;
+      }
+      .dots i {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+      }
+      .win pre {
+        margin: 0;
+        padding: 4px 14px;
+        font-size: clamp(0.6rem, 1.7vw, 0.82rem);
+        line-height: 1.7;
+        white-space: pre-wrap;
+      }
+      .base {
+        max-width: 860px;
+        height: 14px;
+        margin: 0 auto;
+        background: linear-gradient(#d2d2d7, #8e8e93);
+        border-radius: 0 0 18px 18px;
+      }
+      /* grids */
+      .g {
+        display: grid;
+        gap: 18px;
+      }
+      .proj {
+        min-height: 210px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      .chip {
+        border: 1px solid var(--line);
+        background: var(--card);
+        color: var(--mut);
+        padding: 8px 18px;
+        border-radius: 99px;
+        font-size: 0.85rem;
+        font-weight: 500;
+        cursor: pointer;
+        transition: 0.3s;
+        font-family: inherit;
+      }
+      .chip.on {
+        background: var(--fg);
+        color: var(--bg);
+      }
+      .ring {
+        --p: 0;
+        width: 130px;
+        height: 130px;
+        border-radius: 50%;
+        background: conic-gradient(
+          var(--acc) calc(var(--p) * 1%),
+          var(--line) 0
+        );
+        display: grid;
+        place-items: center;
+        margin: 0 auto 12px;
+      }
+      .ring div {
+        width: 104px;
+        height: 104px;
+        border-radius: 50%;
+        background: var(--bg);
+        display: grid;
+        place-items: center;
+        font-weight: 700;
+        font-size: 1.5rem;
+      }
+      .tl {
+        border-left: 2px solid var(--line);
+        padding-left: 26px;
+        margin-left: 8px;
+      }
+      .tl li {
+        margin: 10px 0;
+        color: var(--mut);
+        line-height: 1.55;
+        list-style: none;
+        position: relative;
+      }
+      .tl li:before {
+        content: "";
+        position: absolute;
+        left: -33px;
+        top: 9px;
+        width: 9px;
+        height: 9px;
+        border-radius: 50%;
+        background: var(--acc);
+      }
+      canvas {
+        width: 100%;
+        height: 100%;
+        display: block;
+      }
+      footer {
+        border-top: 1px solid var(--line);
+        padding: 40px 0;
+        color: var(--mut);
+        font-size: 0.85rem;
+        text-align: center;
+      }
+      @media (max-width: 640px) {
+        #links a {
+          padding: 8px 10px;
+        }
+        .logo {
+          display: none;
+        }
+      }
+      .portrait {
+        position: relative;
+        width: clamp(150px, 26vw, 210px);
+        aspect-ratio: 1;
+        margin: 0 auto 28px;
+        cursor: pointer;
+      }
+      .fl {
+        position: absolute;
+        inset: 0;
+        animation: float 6s ease-in-out infinite;
+      }
+      .glow {
+        position: absolute;
+        inset: -34px;
+        border-radius: 50%;
+        background: radial-gradient(circle, var(--acc2), transparent 65%);
+        opacity: 0.4;
+        filter: blur(30px);
+        animation: breathe 4s ease-in-out infinite;
+      }
+      .ring2 {
+        position: absolute;
+        inset: -7px;
+        border-radius: 50%;
+        background: conic-gradient(
+          var(--acc),
+          var(--acc2),
+          #ff6b9a,
+          var(--acc)
+        );
+        animation: spin 8s linear infinite;
+      }
+      .ring2:after {
+        content: "";
+        position: absolute;
+        inset: 4px;
+        border-radius: 50%;
+        background: var(--bg);
+      }
+      .pimgw {
+        position: absolute;
+        inset: 0;
+        border-radius: 50%;
+        overflow: hidden;
+        background: var(--card);
+        display: grid;
+        place-items: center;
+        text-align: center;
+        font-size: 0.75rem;
+        color: var(--mut);
+        line-height: 1.5;
+      }
+      .pimgw img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: none;
+      }
+      .portrait.has img {
+        display: block;
+      }
+      .portrait.has .ph {
+        display: none;
+      }
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+      @keyframes float {
+        50% {
+          transform: translateY(-12px);
+        }
+      }
+      @keyframes breathe {
+        50% {
+          transform: scale(1.15);
+          opacity: 0.6;
+        }
+      }
+      @keyframes beat {
+        15% {
+          transform: scale(1.35);
+        }
+        30% {
+          transform: scale(1);
+        }
+        45% {
+          transform: scale(1.22);
+        }
+      }
+      @keyframes mq {
+        to {
+          transform: translateX(-50%);
+        }
+      }
+      @keyframes preout {
+        to {
+          opacity: 0;
+          visibility: hidden;
+        }
+      }
+      @keyframes pin {
+        from {
+          opacity: 0;
+          transform: translateY(14px);
+          filter: blur(8px);
+        }
+      }
+      .hb {
+        display: inline-block;
+        color: #ff6b9a;
+        animation: beat 1.5s infinite;
+      }
+      #pre {
+        position: fixed;
+        inset: 0;
+        z-index: 100;
+        background: var(--bg);
+        display: grid;
+        place-items: center;
+        font-size: clamp(1.4rem, 5vw, 2.6rem);
+        font-weight: 700;
+        letter-spacing: -0.03em;
+        animation: preout 0.9s 1.7s forwards;
+      }
+      #pre p {
+        animation: pin 1s 0.2s both;
+      }
+      #cur {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 360px;
+        height: 360px;
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 1;
+        background: radial-gradient(
+          circle,
+          color-mix(in srgb, var(--acc) 20%, transparent),
+          transparent 70%
+        );
+      }
+      .mq {
+        overflow: hidden;
+        white-space: nowrap;
+        padding: 22px 0;
+        border-block: 1px solid var(--line);
+        color: var(--mut);
+        font-weight: 600;
+        font-size: 1.1rem;
+        -webkit-mask-image: linear-gradient(
+          90deg,
+          transparent,
+          #000 12%,
+          #000 88%,
+          transparent
+        );
+        mask-image: linear-gradient(
+          90deg,
+          transparent,
+          #000 12%,
+          #000 88%,
+          transparent
+        );
+      }
+      .mq > div {
+        display: inline-block;
+        animation: mq 38s linear infinite;
+      }
+      @media (hover: none) {
+        #cur {
+          display: none;
+        }
+      }
+      @media (min-width: 1600px) {
+        .wrap {
+          max-width: 1340px;
+        }
+        html {
+          font-size: 18px;
+        }
+      }
+      @media (max-width: 420px) {
+        .card {
+          padding: 20px;
+          border-radius: 20px;
+        }
+        .lid {
+          transform: none;
+        }
+      }
+      @media (max-height: 520px) and (orientation: landscape) {
+        #home {
+          padding-top: 90px;
+        }
+      }
+      @media (max-width: 380px) {
+        h1 {
+          font-size: 2.5rem;
+        }
+        #nav {
+          top: calc(8px + env(safe-area-inset-top, 0px));
+        }
+      }
+      @media (min-width: 2200px) {
+        html {
+          font-size: 21px;
+        }
+        .wrap {
+          max-width: 1500px;
+        }
+      }
+      @media (min-width: 768px) and (max-width: 1024px) {
+        .lid {
+          max-width: 620px;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        * {
+          transition: none !important;
+          animation: none !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="pre"><p>Hello, I’m Dhanush</p></div>
+    <div id="cur"></div>
+    <div id="bar"></div>
+    <nav id="nav">
+      <a href="#home" class="logo">DK.</a>
+      <div id="links"></div>
+      <button
+        id="kbtn"
+        class="mono hidden sm:inline-block"
+        aria-label="Open command menu"
+        style="
+          border: 0;
+          background: var(--line);
+          color: var(--fg);
+          height: 34px;
+          padding: 0 12px;
+          border-radius: 99px;
+          cursor: pointer;
+          font-size: 0.72rem;
+          flex: none;
+        "
+      >
+        ⌘K</button
+      ><button id="theme" aria-label="Toggle theme">◐</button>
+    </nav>
+
+    <section id="home">
+      <div
+        class="orb"
+        style="
+          width: 420px;
+          height: 420px;
+          background: var(--acc);
+          top: 5%;
+          left: -8%;
+        "
+      ></div>
+      <div
+        class="orb"
+        style="
+          width: 380px;
+          height: 380px;
+          background: var(--acc2);
+          bottom: 0;
+          right: -6%;
+        "
+      ></div>
+      <div class="wrap w-full text-center relative">
+        <div class="portrait" id="portrait" title="Click to add your photo">
+          <div class="fl">
+            <div class="glow"></div>
+            <div class="ring2"></div>
+            <div class="pimgw">
+              <img id="pimg" alt="Dhanush Kavin G" />
+              <div class="ph">📷<br />Add your<br />photo</div>
+            </div>
+          </div>
+          <input type="file" id="pfile" accept="image/*" hidden />
+        </div>
+        <div
+          class="rv inline-flex items-center gap-2 card !py-2 !px-4 !rounded-full text-sm"
+        >
+          <span
+            style="
+              width: 8px;
+              height: 8px;
+              border-radius: 50%;
+              background: #30d158;
+            "
+          ></span
+          >Available for opportunities
+        </div>
+        <h1 class="rv">Dhanush Kavin <span class="grad">G.</span></h1>
+        <p class="sub rv mx-auto">
+          Software Engineer passionate about Developing scalable Systems —
+          building scalable solutions while exploring advanced CS and emerging
+          technology.
+        </p>
+        <div class="rv flex flex-wrap gap-3 justify-center mt-8">
+          <a class="btn p" href="#projects">View Projects</a>
+          <a
+            class="btn s"
+            href="https://flowcv.com/resume/qdeki5bokjm9"
+            target="_blank"
+            rel="noopener"
+            >Download CV ↗</a
+          >
+        </div>
+        <div
+          class="rv grid grid-cols-2 sm:grid-cols-4 gap-6 mt-14 max-w-2xl mx-auto"
+          id="stats"
+        ></div>
+        <div class="mac">
+          <div class="lid" id="lid">
+            <div class="notch"></div>
+            <div class="screen">
+              <div class="win">
+                <div class="dots">
+                  <i style="background: #ff5f57"></i
+                  ><i style="background: #febc2e"></i
+                  ><i style="background: #28c840"></i>
+                </div>
+                <pre class="mono" id="code"></pre>
+              </div>
+            </div>
+          </div>
+          <div class="base"></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="mq"><div id="mqin"></div></div>
+    <section id="about">
+      <div class="wrap">
+        <div class="eyebrow rv">About</div>
+        <h2 class="t rv">
+          Building at the intersection of
+          <span class="grad">software and mathematics.</span>
+        </h2>
+        <div class="g md:grid-cols-5 mt-10">
+          <div class="card rv md:col-span-3">
+            <p class="sub" style="max-width: none">
+              I'm an aspiring Software Engineer passionate about building
+              impactful products, solving complex problems, and exploring the
+              fundamentals of Computer Science, Mathematics, and AI. Always
+              learning, building, and pushing beyond limits.
+            </p>
+            <p class="sub mt-4" style="max-width: none">
+              At Ether Services I built REST APIs with Spring Boot, implemented
+              JWT authentication and optimised MySQL queries. I believe the best
+              engineers understand both the <em>how</em> and the <em>why</em>.
+            </p>
+          </div>
+          <div class="g md:col-span-2" id="pillars"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="wrap">
+        <div class="eyebrow rv">Skills</div>
+        <h2 class="t rv">Tools of the <span class="grad">trade.</span></h2>
+        <div class="g sm:grid-cols-2 lg:grid-cols-4 mt-10" id="skillgrid"></div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="wrap">
+        <div class="eyebrow rv">Work</div>
+        <h2 class="t rv">Featured <span class="grad">projects.</span></h2>
+        <p class="sub rv">
+          Built to practise, learn and demonstrate full-stack capability.
+        </p>
+        <div class="flex flex-wrap gap-2 mt-8 rv" id="filters"></div>
+        <div class="g sm:grid-cols-2 lg:grid-cols-3 mt-8" id="projgrid"></div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="wrap">
+        <div class="eyebrow rv">Career</div>
+        <h2 class="t rv">Professional <span class="grad">experience.</span></h2>
+        <div class="card rv mt-10">
+          <div class="flex flex-wrap justify-between gap-2">
+            <div>
+              <h3 class="text-2xl font-bold" style="letter-spacing: -0.02em">
+                Software Development Intern
+              </h3>
+              <p style="color: var(--acc); font-weight: 600">
+                Ether Services · Coimbatore, India
+              </p>
+            </div>
+            <p style="color: var(--mut)">2024 · 6 months</p>
+          </div>
+          <p class="sub mt-4" style="max-width: none">
+            Developed and maintained REST APIs with Spring Boot, collaborated on
+            microservices architecture and contributed to database optimisation
+            at a B2B SaaS company.
+          </p>
+          <ul class="tl mt-6 p-0">
+            <li>Built 5+ REST API endpoints with Postman documentation</li>
+            <li>Implemented JWT authentication and role-based authorisation</li>
+            <li>
+              Optimised MySQL queries, cutting response time by roughly 40%
+            </li>
+            <li>
+              Joined microservices design discussions, code reviews and Agile
+              sprints
+            </li>
+          </ul>
+          <div class="mt-4">
+            <span class="tag">Java</span><span class="tag">Spring Boot</span
+            ><span class="tag">MySQL</span><span class="tag">JWT</span
+            ><span class="tag">REST APIs</span><span class="tag">Node.js</span
+            ><span class="tag">Git</span><span class="tag">Postman</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="solving">
+      <div class="wrap">
+        <div class="eyebrow rv">Live Problem Solving</div>
+        <h2 class="t rv">
+          LeetCode &amp; <span class="grad">Codeforces.</span>
+        </h2>
+        <p class="sub rv">
+          A dashboard for my competitive-programming journey. Edit the
+          <span class="mono">PROFILE</span> object in the page script to show
+          your real handles and numbers.
+        </p>
+        <div class="g md:grid-cols-2 mt-10" id="solvegrid"></div>
+        <div class="card rv mt-5">
+          <div class="flex justify-between items-center mb-4">
+            <b>Activity heatmap</b
+            ><span style="color: var(--mut); font-size: 0.8rem"
+              >last 26 weeks · sample</span
+            >
+          </div>
+          <div
+            id="heat"
+            style="
+              display: grid;
+              grid-template-columns: repeat(26, 1fr);
+              gap: 4px;
+            "
+          ></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="lab">
+      <div class="wrap">
+        <div class="eyebrow rv">Code Lab</div>
+        <h2 class="t rv">Code in <span class="grad">motion.</span></h2>
+        <p class="sub rv">
+          Live demos of how I think about algorithms and APIs.
+        </p>
+        <div class="g lg:grid-cols-2 mt-10">
+          <div class="card rv">
+            <div class="flex justify-between items-center mb-4">
+              <b>Bubble sort · O(n²)</b
+              ><button class="chip" id="resort">Shuffle &amp; sort</button>
+            </div>
+            <div
+              id="bars"
+              style="
+                display: flex;
+                align-items: flex-end;
+                gap: 4px;
+                height: 210px;
+              "
+            ></div>
+            <p
+              id="sortinfo"
+              class="mono mt-3"
+              style="color: var(--mut); font-size: 0.78rem"
+            >
+              comparisons: 0
+            </p>
+          </div>
+          <div
+            class="card rv"
+            style="
+              background: #1c1c1e;
+              color: #e5e5ea;
+              border-color: rgba(255, 255, 255, 0.1);
+            "
+          >
+            <div class="dots" style="padding: 0 0 12px">
+              <i style="background: #ff5f57"></i
+              ><i style="background: #febc2e"></i
+              ><i style="background: #28c840"></i>
+            </div>
+            <pre
+              class="mono"
+              id="api"
+              style="
+                min-height: 230px;
+                font-size: 0.78rem;
+                line-height: 1.7;
+                white-space: pre-wrap;
+                margin: 0;
+                word-break: break-word;
+              "
+            ></pre>
+          </div>
+          <div class="card rv lg:col-span-2">
+            <b>Binary search · O(log n)</b>
+            <div
+              id="bs"
+              style="display: flex; gap: 4px; margin-top: 16px"
+            ></div>
+            <p
+              id="bsinfo"
+              class="mono mt-3"
+              style="color: var(--mut); font-size: 0.78rem"
+            ></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="research">
+      <div class="wrap">
+        <div class="eyebrow rv">Self Research</div>
+        <h2 class="t rv">
+          Computational Mathematics <span class="grad">&amp; Python.</span>
+        </h2>
+        <p class="sub rv">
+          Independent research, simulations and write-ups published from Python
+          experiments.
+        </p>
+        <div class="g lg:grid-cols-2 mt-10">
+          <div
+            class="card rv !p-0 overflow-hidden"
+            style="min-height: 340px; background: #050510"
+          >
+            <canvas id="lorenz"></canvas>
+          </div>
+          <div class="g" id="papers"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="articles">
+      <div class="wrap">
+        <div class="eyebrow rv">Writing</div>
+        <h2 class="t rv">14+ technical <span class="grad">articles.</span></h2>
+        <div class="g sm:grid-cols-2 mt-10">
+          <a
+            class="card rv"
+            href="https://medium.com/@dhanushkavinofficial"
+            target="_blank"
+            rel="noopener"
+            ><h3 class="text-2xl font-bold">Medium ↗</h3>
+            <p class="sub mt-2">
+              Java, backend engineering and mathematics write-ups.
+            </p></a
+          >
+          <a
+            class="card rv"
+            href="https://dev.to/dhanush_kaving_f68718582"
+            target="_blank"
+            rel="noopener"
+            ><h3 class="text-2xl font-bold">DEV Community ↗</h3>
+            <p class="sub mt-2">Developer-focused tutorials and notes.</p></a
+          >
+        </div>
+      </div>
+    </section>
+
+    <section id="certificates">
+      <div class="wrap">
+        <div class="eyebrow rv">Achievements</div>
+        <h2 class="t rv">
+          Certificates &amp; <span class="grad">recognition.</span>
+        </h2>
+        <div class="g sm:grid-cols-2 lg:grid-cols-3 mt-10" id="certs"></div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="wrap text-center">
+        <div class="eyebrow rv">Contact</div>
+        <h2 class="t rv">
+          Let’s build something <span class="grad">remarkable.</span>
+        </h2>
+        <div
+          class="rv flex flex-wrap gap-3 justify-center mt-8"
+          id="socials"
+        ></div>
+      </div>
+    </section>
+    <button
+      id="top"
+      class="card"
+      aria-label="Back to top"
+      style="
+        position: fixed;
+        right: 18px;
+        bottom: calc(18px + env(safe-area-inset-bottom, 0px));
+        z-index: 40;
+        width: 46px;
+        height: 46px;
+        padding: 0;
+        border-radius: 50%;
+        cursor: pointer;
+        opacity: 0;
+        pointer-events: none;
+        color: var(--fg);
+        font-size: 18px;
+      "
+    >
+      ↑
+    </button>
+    <div
+      id="pal"
+      style="
+        position: fixed;
+        inset: 0;
+        z-index: 90;
+        background: rgba(0, 0, 0, 0.35);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        display: none;
+        align-items: flex-start;
+        justify-content: center;
+        padding-top: 16vh;
+      "
+    >
+      <div class="card" style="width: min(560px, 92vw); padding: 14px">
+        <input
+          id="pin"
+          placeholder="Jump to a section or action…"
+          autocomplete="off"
+          style="
+            width: 100%;
+            background: transparent;
+            border: 0;
+            outline: 0;
+            color: var(--fg);
+            font: inherit;
+            font-size: 1.05rem;
+            padding: 10px 12px;
+            border-bottom: 1px solid var(--line);
+          "
+        />
+        <div
+          id="pl"
+          style="max-height: 50vh; overflow: auto; margin-top: 8px"
+        ></div>
+      </div>
+    </div>
+    <footer>
+       © 2025 Dhanush Kavin G. All rights reserved. ·
+      Press <span class="mono">⌘/Ctrl K</span> to navigate
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+    <script>
+      const $ = (s) => document.querySelector(s);
+      const GH = "https://github.com/dhanushkavinofficial/";
+      const PROFILE = {
+        // EDIT: your real handles and numbers (live API calls are blocked on hosted pages)
+        leetcode: {
+          handle: "your-leetcode-id",
+          url: "https://leetcode.com/u/your-leetcode-id/",
+          solved: 10,
+          easy: 7,
+          med: 0,
+          hard: 2,
+          rating: "—",
+        },
+        codeforces: {
+          handle: "your-cf-handle",
+          url: "https://codeforces.com/profile/your-cf-handle",
+          solved: 0,
+          rating: 0,
+          rank: "Sonne",
+        },
+      };
+      const NAV = [
+        "Home",
+        "About",
+        "Skills",
+        "Projects",
+        "Experience",
+        "Solving",
+        "Code Lab",
+        "Research",
+        "Articles",
+        "Certificates",
+        "Contact",
+      ];
+      const IDS = [
+        "home",
+        "about",
+        "skills",
+        "projects",
+        "experience",
+        "solving",
+        "lab",
+        "research",
+        "articles",
+        "certificates",
+        "contact",
+      ];
+      $("#links").innerHTML = NAV.map(
+        (n, i) => `<a href="#${IDS[i]}" data-id="${IDS[i]}">${n}</a>`,
+      ).join("");
+      $("#stats").innerHTML = [
+        ["10+", "Projects"],
+        ["14+", "Articles"],
+        ["6+", "Certificates"],
+        ["∞", "Learning"],
+      ]
+        .map(
+          (s) => `<div class="stat"><b>${s[0]}</b><span>${s[1]}</span></div>`,
+        )
+        .join("");
+      $("#pillars").innerHTML = [
+        [
+          "Software Engineering",
+          "Java · Python · REST APIs · TypeScript · MySQL · Node.js",
+        ],
+        [
+          "Mathematics",
+          "DSA · Discrete Math · Problem Solving · Competitive Programming",
+        ],
+        ["Research Mindset", "AI systems · Algorithm theory"],
+      ]
+        .map(
+          (p) =>
+            `<div class="card rv"><h3 class="font-bold">${p[0]}</h3><p style="color:var(--mut);font-size:.9rem;margin-top:6px">${p[1]}</p></div>`,
+        )
+        .join("");
+      $("#skillgrid").innerHTML = [
+        ["Backend", ["Java", "Python", "TypeScript", "Spring Boot", "REST APIs", "JWT", "Node.js",]],
+        [
+          "Frontend",
+          ["HTML/CSS", "JS ES6+", "Angular", "Bootstrap", "Tailwind"],
+        ],
+        ["Data & Tools", ["MySQL", "Git", "Postman", "Python"]],
+        [
+          "Computer Science",
+          ["DSA", "Discrete Math", "Algorithms", "Problem Solving"],
+        ],
+      ]
+        .map(
+          (s) =>
+            `<div class="card rv"><h3 class="font-bold text-lg mb-3">${s[0]}</h3>${s[1].map((t) => `<span class="tag">${t}</span>`).join("")}</div>`,
+        )
+        .join("");
+      const P = [
+        [
+          "Skyline Mart",
+          "E-Commerce",
+          "E-commerce platform practising web design and frontend interaction patterns.",
+          "Angular,Bootstrap,JS",
+          "skylinemart/",
+          "",
+        ],
+        [
+          "MathVision",
+          "Web Apps",
+          "Interactive mathematics learning platform with responsive layout.",
+          "HTML/CSS,Bootstrap,JS",
+          "MathVision-Interactive-Mathematics-Learning-Platform/",
+          "MathVision-Interactive-Mathematics-Learning-Platform",
+        ],
+        [
+          "Finance Hub",
+          "Web Apps",
+          "Finance calculator with 5+ modules for loan, interest and investment logic.",
+          "Angular,Bootstrap,JS",
+          "financecalx/",
+          "",
+        ],
+        [
+          "DK Secure Pass",
+          "Web Apps",
+          "Secure password generator with custom complexity rules and PDF export.",
+          "Angular,Bootstrap,JS",
+          "DKsecure/",
+          "",
+        ],
+        [
+          "WanderWise",
+          "APIs",
+          "India travel planner with destination discovery using API integration.",
+          "HTML/CSS,JS,API",
+          "WanderWise-India/",
+          "",
+        ],
+        [
+          "Google Search UI",
+          "APIs",
+          "Search engine UI built on Google Custom Search API.",
+          "Bootstrap,Google API",
+          "google/",
+          "",
+        ],
+        [
+          "NextGenDepot",
+          "Web Apps",
+          "Warehouse management enterprise UI with modern component design.",
+          "Angular,Bootstrap,JS",
+          "Warehouse/",
+          "",
+        ],
+        [
+          "Netflix UI Clone",
+          "Clones",
+          "Complex layout practice with CSS Grid and Flexbox.",
+          "HTML/CSS,Bootstrap,JS",
+          "Netflix/",
+          "",
+        ],
+        [
+          "Hotstar Clone",
+          "Clones",
+          "Responsive UI with sliders, thumbnails and video card previews.",
+          "HTML/CSS,JS,Grid/Flex",
+          "hotstar/",
+          "",
+        ],
+        [
+          "Logic Login / Signup",
+          "Web Apps",
+          "Responsive auth UI with JS validation and custom logic.",
+          "HTML/CSS,Bootstrap,JS",
+          "login/",
+          "",
+        ],
+        [
+          "YouTube UI Clone",
+          "Clones",
+          "Interactive YouTube-style UI with comment section.",
+          "Bootstrap,JS ES6+",
+          "YOUtube/",
+          "",
+        ],
+        [
+          "Age Calculator",
+          "Web Apps",
+          "Precise age calculation with careful date handling.",
+          "Angular,Bootstrap,JS",
+          "agecalxe/",
+          "",
+        ],
+      ];
+      const CATS = ["All", "Web Apps", "APIs", "Clones", "E-Commerce"];
+      function drawP(f) {
+        $("#projgrid").innerHTML = P.filter((p) => f === "All" || p[1] === f)
+          .map(
+            (p, i) =>
+              `<div class="card proj"><div><div class="eyebrow" style="font-size:.7rem">${p[1]}</div><h3 class="text-xl font-bold mt-1" style="letter-spacing:-.02em">${p[0]}</h3><p style="color:var(--mut);font-size:.9rem;margin:8px 0">${p[2]}</p>${p[3]
+                .split(",")
+                .map((t) => `<span class="tag">${t}</span>`)
+                .join(
+                  "",
+                )}</div><div class="flex gap-4 mt-4 text-sm font-semibold"><a style="color:var(--acc)" target="_blank" rel="noopener" href="https://dhanushkavinofficial.github.io/${p[4]}">Live ↗</a><a target="_blank" rel="noopener" href="${GH}${p[5]}">GitHub ↗</a></div></div>`,
+          )
+          .join("");
+        if (window.gsap)
+          gsap.from("#projgrid .card", {
+            y: 30,
+            opacity: 0,
+            duration: 0.6,
+            stagger: 0.05,
+            ease: "power3.out",
+          });
+      }
+      $("#filters").innerHTML = CATS.map(
+        (c, i) =>
+          `<button class="chip ${i ? "" : "on"}" data-c="${c}">${c}</button>`,
+      ).join("");
+      $("#filters").onclick = (e) => {
+        const c = e.target.dataset.c;
+        if (!c) return;
+        document
+          .querySelectorAll(".chip")
+          .forEach((b) => b.classList.toggle("on", b === e.target));
+        drawP(c);
+      };
+      drawP("All");
+      const L = PROFILE.leetcode,
+        C = PROFILE.codeforces;
+      $("#solvegrid").innerHTML =
+        `<a class="card rv" href="${L.url}" target="_blank" rel="noopener"><div class="flex justify-between"><h3 class="font-bold text-xl">LeetCode</h3><span class="mono" style="color:var(--mut)">@${L.handle}</span></div><div class="ring mt-5" data-p="${Math.round(L.solved / 8)}"><div>${L.solved}</div></div><p class="text-center" style="color:var(--mut);font-size:.85rem">problems solved</p><div class="grid grid-cols-3 text-center mt-4"><div><b style="color:#30d158">${L.easy}</b><br><small>Easy</small></div><div><b style="color:#ff9f0a">${L.med}</b><br><small>Medium</small></div><div><b style="color:#ff453a">${L.hard}</b><br><small>Hard</small></div></div></a>
+<a class="card rv" href="${C.url}" target="_blank" rel="noopener"><div class="flex justify-between"><h3 class="font-bold text-xl">Codeforces</h3><span class="mono" style="color:var(--mut)">@${C.handle}</span></div><div class="ring mt-5" data-p="${Math.round(C.rating / 35)}"><div>${C.rating}</div></div><p class="text-center" style="color:var(--mut);font-size:.85rem">current rating · ${C.rank}</p><div class="grid grid-cols-2 text-center mt-4"><div><b>${C.solved}</b><br><small>Solved</small></div><div><b>${C.rank}</b><br><small>Rank</small></div></div></a>`;
+      let seed = 7;
+      const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+      $("#heat").innerHTML = Array.from({ length: 26 * 7 }, () => {
+        const v = rnd();
+        const a =
+          v < 0.45 ? 0 : v < 0.7 ? 0.25 : v < 0.88 ? 0.5 : v < 0.96 ? 0.75 : 1;
+        return `<i style="aspect-ratio:1;border-radius:3px;background:${a ? `color-mix(in srgb,var(--acc) ${a * 100}%,transparent)` : "var(--line)"}"></i>`;
+      }).join("");
+      $("#papers").innerHTML = [
+        [
+          "Numerical Methods in Python",
+          "Newton–Raphson, bisection and convergence analysis with NumPy.",
+          "Python · NumPy",
+        ],
+        [
+          "Chaos &amp; Dynamical Systems",
+          "Lorenz attractor and Lyapunov behaviour simulated with Python.",
+          "Python · Matplotlib",
+        ],
+        [
+          "Algorithm Theory Notes",
+          "Complexity, discrete maths and proof sketches for core algorithms.",
+          "DSA · Discrete Math",
+        ],
+      ]
+        .map(
+          (p) =>
+            `<div class="card rv"><div class="eyebrow" style="font-size:.7rem">${p[2]}</div><h3 class="font-bold text-lg mt-1">${p[0]}</h3><p style="color:var(--mut);font-size:.9rem;margin-top:6px">${p[1]}</p><p class="text-xs mt-3" style="color:var(--mut)">Draft · add your publication links here</p></div>`,
+        )
+        .join("");
+      $("#certs").innerHTML = [
+        [
+          "JavaScript (Intermediate)",
+          "HackerRank · Dec 2024",
+          "https://www.hackerrank.com/certificates/ae4f4082485b",
+        ],
+        [
+          "JavaScript (Basic)",
+          "HackerRank · Jul 2024",
+          "https://www.hackerrank.com/certificates/47570d905caf",
+        ],
+        [
+          "Problem Solving",
+          "HackerRank · Sep 2024",
+          "https://www.hackerrank.com/certificates/2afa50e9d3e5",
+        ],
+        [
+          "Internship Certificate",
+          "Ether Services · 2025",
+          "https://docs.google.com/document/d/1o8Cji2KAJmBO-pgPIKRVF0AwrvuyZzgepkut_p3OV1A/edit?usp=sharing",
+        ],
+        [
+          "Course Completion",
+          "Appin Technology · 2025",
+          "https://docs.google.com/document/d/1UzVOGS3CUfDhnP-0rrgyvPGMPCfZnXi3X5O-OuwTnow/edit?usp=sharing",
+        ],
+        [
+          "Project Completion",
+          "Appin Technologies · 2025",
+          "https://docs.google.com/document/d/1VdwFpjn0Rxxu_oygrzhwn-heoVXvg1ZDgHvOCopJi3E/edit?usp=sharing",
+        ],
+      ]
+        .map(
+          (c) =>
+            `<a class="card rv" href="${c[2]}" target="_blank" rel="noopener"><div style="color:#30d158;font-size:.75rem;font-weight:600">✓ VERIFIED</div><h3 class="font-bold text-lg mt-1">${c[0]}</h3><p style="color:var(--mut);font-size:.9rem">${c[1]}</p></a>`,
+        )
+        .join("");
+      $("#socials").innerHTML = [
+        ["GitHub", "https://github.com/dhanushkavinofficial"],
+        ["LinkedIn", "https://www.linkedin.com/in/dhanushkaving1"],
+        ["Medium", "https://medium.com/@dhanushkavinofficial"],
+        ["DEV", "https://dev.to/dhanush_kaving_f68718582"],
+      ]
+        .map(
+          (s) =>
+            `<a class="btn s" href="${s[1]}" target="_blank" rel="noopener">${s[0]} ↗</a>`,
+        )
+        .join("");
+      // theme
+      const PHOTO_URL = ""; // paste your photo URL or data URI here to make it permanent for everyone
+      const pt = $("#portrait"),
+        pi = $("#pimg"),
+        pf = $("#pfile");
+      const setP = (u) => {
+        pi.src = u;
+        pt.classList.add("has");
+      };
+      try {
+        const s = localStorage.getItem("dk-photo");
+        if (PHOTO_URL) setP(PHOTO_URL);
+        else if (s) setP(s);
+      } catch (e) {}
+      pt.onclick = () => pf.click();
+      pf.onchange = () => {
+        const f = pf.files[0];
+        if (!f) return;
+        const r = new FileReader();
+        r.onload = () => {
+          const im = new Image();
+          im.onload = () => {
+            const c = document.createElement("canvas"),
+              m = Math.min(im.width, im.height);
+            c.width = c.height = 520;
+            c.getContext("2d").drawImage(
+              im,
+              (im.width - m) / 2,
+              (im.height - m) / 2,
+              m,
+              m,
+              0,
+              0,
+              520,
+              520,
+            );
+            const u = c.toDataURL("image/jpeg", 0.86);
+            setP(u);
+            try {
+              localStorage.setItem("dk-photo", u);
+            } catch (e) {}
+          };
+          im.src = r.result;
+        };
+        r.readAsDataURL(f);
+      };
+      const mw =
+        [
+          "Java",
+          "Spring Boot",
+          "REST APIs",
+          "JWT",
+          "MySQL",
+          "Angular",
+          "Python",
+          "DSA",
+          "Discrete Math",
+          "Node.js",
+          "Tailwind",
+          "GSAP",
+        ].join("  ✦  ") + "  ✦  ";
+      $("#mqin").textContent = mw + mw + mw + mw;
+      const root = document.documentElement;
+      const setT = (t) => {
+        root.dataset.theme = t;
+        $("#theme").textContent = t === "dark" ? "☀" : "☾";
+      };
+      try {
+        setT(localStorage.getItem("dk-theme") === "dark" ? "dark" : "light");
+      } catch (e) {
+        setT("light");
+      }
+      $("#theme").onclick = () => {
+        const t = root.dataset.theme === "dark" ? "light" : "dark";
+        setT(t);
+        try {
+          localStorage.setItem("dk-theme", t);
+        } catch (e) {}
+      };
+      // typing
+      const src =
+        '@RestController\npublic class Dhanush {\n  String role = "Software Engineer";\n  String[] loves = {"Java","Math","AI"};\n\n  @GetMapping("/hello")\n  String hi() {\n    return "Let’s build together.";\n  }\n}';
+      let ci = 0;
+      const ce = $("#code");
+      (function t() {
+        ce.textContent = src.slice(0, ci++) + "▌";
+        if (ci <= src.length) setTimeout(t, 32);
+        else ce.textContent = src;
+      })();
+      // code lab
+      const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+      let vis = false;
+      new IntersectionObserver((e) => {
+        vis = e[0].isIntersecting;
+      }).observe($("#lab"));
+      const waitV = async () => {
+        while (!vis) await sleep(300);
+      };
+      let run = 1;
+      const bars = $("#bars"),
+        N = 22;
+      let arr = [];
+      const draw = (hi, dn) => {
+        bars.innerHTML = arr
+          .map(
+            (v, i) =>
+              '<i style="flex:1;height:' +
+              v +
+              "%;border-radius:4px 4px 0 0;background:" +
+              (hi.includes(i)
+                ? "var(--acc2)"
+                : i >= dn
+                  ? "#30d158"
+                  : "var(--acc)") +
+              '"></i>',
+          )
+          .join("");
+      };
+      async function sortLoop(id) {
+        while (id === run) {
+          arr = Array.from({ length: N }, () => (10 + Math.random() * 90) | 0);
+          let c = 0;
+          draw([], 99);
+          await sleep(600);
+          for (let i = 0; i < N - 1; i++)
+            for (let j = 0; j < N - 1 - i; j++) {
+              if (id !== run) return;
+              await waitV();
+              c++;
+              if (arr[j] > arr[j + 1])
+                [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
+              draw([j, j + 1], N - i);
+              $("#sortinfo").textContent = "comparisons: " + c;
+              await sleep(30);
+            }
+          draw([], 0);
+          await sleep(2400);
+        }
+      }
+      $("#resort").onclick = () => {
+        run++;
+        sortLoop(run);
+      };
+      sortLoop(run);
+      const apiT =
+        '$ curl -H "Authorization: Bearer <JWT>" http://localhost:8080/api/v1/projects?limit=2\n\nHTTP/1.1 200 OK · 42ms\n{\n  "engineer": "Dhanush Kavin G",\n  "stack": ["Java", "Spring Boot", "MySQL"],\n  "projects": 12,\n  "auth": "JWT · role-based",\n  "query_time": "-40%"\n}';
+      (async () => {
+        const el = $("#api");
+        while (1) {
+          for (let i = 0; i <= apiT.length; i++) {
+            await waitV();
+            el.textContent = apiT.slice(0, i) + "▌";
+            await sleep(apiT[i] === "\n" ? 180 : i < 80 ? 22 : 12);
+          }
+          el.textContent = apiT;
+          await sleep(3500);
+        }
+      })();
+      const B = [3, 8, 12, 17, 21, 26, 31, 38, 44, 49, 55, 61, 68, 74, 83, 91],
+        bs = $("#bs"),
+        bi = $("#bsinfo");
+      const bdraw = (lo, hi, m, f) => {
+        bs.innerHTML = B.map(
+          (v, i) =>
+            '<span class="mono" style="flex:1;min-width:0;text-align:center;padding:10px 0;border-radius:8px;font-size:.72rem;background:' +
+            (i === f
+              ? "#30d158;color:#fff"
+              : i === m
+                ? "var(--acc2);color:#fff"
+                : "var(--line)") +
+            ";opacity:" +
+            ((i < lo || i > hi) && i !== f ? 0.25 : 1) +
+            '">' +
+            v +
+            "</span>",
+        ).join("");
+      };
+      (async () => {
+        while (1) {
+          const t = B[(Math.random() * 16) | 0];
+          let lo = 0,
+            hi = 15;
+          bdraw(lo, hi, -1, -1);
+          bi.textContent = "target = " + t;
+          await sleep(900);
+          while (lo <= hi) {
+            await waitV();
+            const m = (lo + hi) >> 1;
+            bdraw(lo, hi, m, -1);
+            bi.textContent =
+              "target = " +
+              t +
+              " · lo=" +
+              lo +
+              " hi=" +
+              hi +
+              " mid=" +
+              m +
+              " → " +
+              B[m] +
+              (B[m] === t
+                ? " = found"
+                : B[m] < t
+                  ? " < target, go right"
+                  : " > target, go left");
+            await sleep(1100);
+            if (B[m] === t) {
+              bdraw(lo, hi, -1, m);
+              await sleep(1800);
+              break;
+            }
+            if (B[m] < t) lo = m + 1;
+            else hi = m - 1;
+          }
+        }
+      })();
+      // command menu + back to top
+      const pal = $("#pal"),
+        pin = $("#pin"),
+        pl = $("#pl");
+      const items = NAV.map((n, i) => ({ n, id: IDS[i] })).concat([
+        { n: "Download CV", u: "https://flowcv.com/resume/qdeki5bokjm9" },
+        { n: "GitHub", u: "https://github.com/dhanushkavinofficial" },
+        { n: "LinkedIn", u: "https://www.linkedin.com/in/dhanushkaving1" },
+        { n: "Toggle light / dark theme", t: 1 },
+      ]);
+      let sel = 0,
+        list = items;
+      const rend = () => {
+        pl.innerHTML = list
+          .map(
+            (it, i) =>
+              '<div data-i="' +
+              i +
+              '" style="padding:10px 12px;border-radius:12px;cursor:pointer;' +
+              (i === sel ? "background:var(--line)" : "") +
+              '">' +
+              it.n +
+              "</div>",
+          )
+          .join("");
+      };
+      const openP = () => {
+          pal.style.display = "flex";
+          pin.value = "";
+          list = items;
+          sel = 0;
+          rend();
+          pin.focus();
+        },
+        closeP = () => {
+          pal.style.display = "none";
+        };
+      const go = (it) => {
+        closeP();
+        if (it.id) {
+          const el = $("#" + it.id);
+          window.LN
+            ? LN.scrollTo(el)
+            : el.scrollIntoView({ behavior: "smooth" });
+        } else if (it.u) window.open(it.u, "_blank", "noopener");
+        else if (it.t) $("#theme").click();
+      };
+      pin.oninput = () => {
+        list = items.filter((x) =>
+          x.n.toLowerCase().includes(pin.value.toLowerCase()),
+        );
+        sel = 0;
+        rend();
+      };
+      pl.onclick = (e) => {
+        const d = e.target.closest("[data-i]");
+        if (d) go(list[d.dataset.i]);
+      };
+      pal.onclick = (e) => {
+        if (e.target === pal) closeP();
+      };
+      $("#kbtn").onclick = openP;
+      addEventListener("keydown", (e) => {
+        if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "k") {
+          e.preventDefault();
+          openP();
+        } else if (pal.style.display === "flex") {
+          if (e.key === "Escape") closeP();
+          else if (e.key === "ArrowDown") {
+            sel = Math.min(sel + 1, list.length - 1);
+            rend();
+          } else if (e.key === "ArrowUp") {
+            sel = Math.max(sel - 1, 0);
+            rend();
+          } else if (e.key === "Enter" && list[sel]) go(list[sel]);
+        }
+      });
+      const tp = $("#top");
+      addEventListener(
+        "scroll",
+        () => {
+          const s = scrollY > 700;
+          tp.style.opacity = s ? 1 : 0;
+          tp.style.pointerEvents = s ? "auto" : "none";
+        },
+        { passive: true },
+      );
+      tp.onclick = () =>
+        window.LN ? LN.scrollTo(0) : scrollTo({ top: 0, behavior: "smooth" });
+      // lorenz
+      (function () {
+        const c = $("#lorenz"),
+          x = c.getContext("2d");
+        let w,
+          h,
+          p = [0.1, 0, 0],
+          tr = [];
+        const rs = () => {
+          w = c.width = c.clientWidth * devicePixelRatio;
+          h = c.height = c.clientHeight * devicePixelRatio;
+        };
+        rs();
+        addEventListener("resize", rs);
+        (function f() {
+          const dt = 0.006,
+            [a, b, z] = p;
+          for (let i = 0; i < 3; i++) {
+            const [X, Y, Z] = p;
+            p = [
+              X + 10 * (Y - X) * dt,
+              Y + (X * (28 - Z) - Y) * dt,
+              Z + (X * Y - (8 / 3) * Z) * dt,
+            ];
+          }
+          tr.push(p.slice());
+          if (tr.length > 1400) tr.shift();
+          x.fillStyle = "rgba(5,5,16,.25)";
+          x.fillRect(0, 0, w, h);
+          x.lineWidth = 1.6 * devicePixelRatio;
+          const s = Math.min(w, h) / 52;
+          for (let i = 1; i < tr.length; i++) {
+            x.strokeStyle = `hsla(${210 + i / 6},90%,65%,${i / tr.length})`;
+            x.beginPath();
+            x.moveTo(w / 2 + tr[i - 1][0] * s, h * 0.9 - tr[i - 1][2] * s);
+            x.lineTo(w / 2 + tr[i][0] * s, h * 0.9 - tr[i][2] * s);
+            x.stroke();
+          }
+          x.fillStyle = "#8e8e93";
+          x.font = `${12 * devicePixelRatio}px JetBrains Mono,monospace`;
+          x.fillText(
+            "Lorenz system · σ=10 ρ=28 β=8/3",
+            16 * devicePixelRatio,
+            24 * devicePixelRatio,
+          );
+          requestAnimationFrame(f);
+        })();
+      })();
+      // motion
+      if (window.gsap && window.ScrollTrigger && window.Lenis) {
+        gsap.registerPlugin(ScrollTrigger);
+        const ln = (window.LN = new Lenis({
+          lerp: 0.07,
+          wheelMultiplier: 0.85,
+          touchMultiplier: 1.4,
+        }));
+        ln.on("scroll", ScrollTrigger.update);
+        gsap.ticker.add((t) => ln.raf(t * 1000));
+        gsap.ticker.lagSmoothing(0);
+        document.querySelectorAll('a[href^="#"]').forEach((a) =>
+          a.addEventListener("click", (e) => {
+            const el = $(a.getAttribute("href"));
+            if (el) {
+              e.preventDefault();
+              ln.scrollTo(el, { offset: -10 });
+            }
+          }),
+        );
+        gsap.from("#home .rv", {
+          y: 50,
+          opacity: 0,
+          duration: 1.1,
+          stagger: 0.14,
+          ease: "power4.out",
+          delay: 1.8,
+        });
+        gsap.fromTo(
+          "#lid",
+          { rotateX: 62, y: 60 },
+          {
+            rotateX: 0,
+            y: 0,
+            ease: "none",
+            scrollTrigger: {
+              trigger: ".mac",
+              start: "top 95%",
+              end: "center 55%",
+              scrub: 0.6,
+            },
+          },
+        );
+        gsap.to(".orb", { y: -120, scrollTrigger: { scrub: 1 } });
+        gsap.to("#bar", {
+          scaleX: 1,
+          ease: "none",
+          scrollTrigger: { scrub: 0.2, start: 0, end: "max" },
+        });
+        ScrollTrigger.batch("section:not(#home) .rv", {
+          start: "top 88%",
+          once: true,
+          onEnter: (b) =>
+            gsap.from(b, {
+              y: 46,
+              opacity: 0,
+              duration: 0.9,
+              stagger: 0.09,
+              ease: "power3.out",
+            }),
+        });
+        document
+          .querySelectorAll(".ring")
+          .forEach((r) =>
+            ScrollTrigger.create({
+              trigger: r,
+              start: "top 90%",
+              once: true,
+              onEnter: () =>
+                gsap.fromTo(
+                  r,
+                  { "--p": 0 },
+                  { "--p": r.dataset.p, duration: 1.6, ease: "power3.out" },
+                ),
+            }),
+          );
+        gsap.from("#heat i", {
+          scale: 0,
+          opacity: 0,
+          duration: 0.4,
+          stagger: { each: 0.004, from: "start" },
+          scrollTrigger: { trigger: "#heat", start: "top 90%", once: true },
+        });
+        IDS.forEach((id) =>
+          ScrollTrigger.create({
+            trigger: "#" + id,
+            start: "top 45%",
+            end: "bottom 45%",
+            onToggle: (s) => {
+              if (s.isActive) {
+                document
+                  .querySelectorAll("#links a")
+                  .forEach((a) =>
+                    a.classList.toggle("on", a.dataset.id === id),
+                  );
+                const a = $("#links a.on");
+                a && a.scrollIntoView({ inline: "center", block: "nearest" });
+              }
+            },
+          }),
+        );
+        gsap.from("#home h1", {
+          yPercent: 30,
+          opacity: 0,
+          filter: "blur(16px)",
+          duration: 1.4,
+          ease: "power4.out",
+          delay: 1.9,
+        });
+        gsap.from("#portrait", {
+          scale: 0.3,
+          opacity: 0,
+          duration: 1.8,
+          ease: "elastic.out(1,.55)",
+          delay: 1.8,
+        });
+        document.querySelectorAll(".stat b").forEach((b) => {
+          const n = parseInt(b.textContent);
+          if (!n) return;
+          const t = b.textContent.replace(n, ""),
+            o = { v: 0 };
+          gsap.to(o, {
+            v: n,
+            duration: 2.2,
+            delay: 2.4,
+            ease: "power2.out",
+            onUpdate: () => (b.textContent = Math.round(o.v) + t),
+          });
+        });
+        gsap.utils
+          .toArray("section h2.t")
+          .forEach((h) =>
+            gsap.fromTo(
+              h,
+              { letterSpacing: ".04em" },
+              {
+                letterSpacing: "-.035em",
+                ease: "none",
+                scrollTrigger: {
+                  trigger: h,
+                  start: "top 95%",
+                  end: "top 45%",
+                  scrub: 0.6,
+                },
+              },
+            ),
+          );
+        const hz = () => {
+          if (document.hidden) return;
+          const e = document.createElement("span");
+          e.textContent = [
+            "{}",
+            "=>",
+            "O(n)",
+            "</>",
+            "git push",
+            "SELECT *",
+            "@GetMapping",
+            "async",
+            "JWT",
+            "200 OK",
+            "O(log n)",
+            "mvn test",
+          ][(Math.random() * 12) | 0];
+          e.style.cssText =
+            "position:absolute;left:" +
+            (15 + Math.random() * 70) +
+            "%;bottom:12%;pointer-events:none;color:" +
+            ["#ff6b9a", "#bf5af2", "#2997ff"][(Math.random() * 3) | 0] +
+            ";font-size:" +
+            (10 + Math.random() * 14) +
+            "px";
+          e.className = "mono";
+          e.style.whiteSpace = "nowrap";
+          pt.appendChild(e);
+          gsap.fromTo(
+            e,
+            { opacity: 0.9, scale: 0 },
+            {
+              scale: 1,
+              opacity: 0,
+              y: -130 - Math.random() * 70,
+              x: (Math.random() - 0.5) * 90,
+              duration: 3 + Math.random() * 2,
+              ease: "sine.out",
+              onComplete: () => e.remove(),
+            },
+          );
+        };
+        setTimeout(() => setInterval(hz, 800), 2200);
+        if (matchMedia("(hover:hover)").matches) {
+          const cg = $("#cur");
+          gsap.set(cg, { xPercent: -50, yPercent: -50 });
+          const qx = gsap.quickTo(cg, "x", { duration: 0.7, ease: "power3" }),
+            qy = gsap.quickTo(cg, "y", { duration: 0.7, ease: "power3" });
+          addEventListener("mousemove", (e) => {
+            qx(e.clientX);
+            qy(e.clientY);
+          });
+          document.addEventListener("mousemove", (e) => {
+            const c = e.target.closest && e.target.closest(".card");
+            if (!c) return;
+            const r = c.getBoundingClientRect(),
+              px = (e.clientX - r.left) / r.width - 0.5,
+              py = (e.clientY - r.top) / r.height - 0.5;
+            gsap.to(c, {
+              rotateY: px * 9,
+              rotateX: -py * 9,
+              y: -6,
+              transformPerspective: 900,
+              duration: 0.5,
+              overwrite: "auto",
+            });
+          });
+          document.addEventListener("mouseout", (e) => {
+            const c = e.target.closest && e.target.closest(".card");
+            if (c && !c.contains(e.relatedTarget))
+              gsap.to(c, {
+                rotateX: 0,
+                rotateY: 0,
+                y: 0,
+                duration: 0.8,
+                ease: "power3.out",
+              });
+          });
+        }
+      } else {
+        $("#lid").style.transform = "none";
+      }
+    </script>
+  </body>
+</html>
